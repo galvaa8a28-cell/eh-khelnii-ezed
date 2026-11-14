@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ЭХ ХЭЛНИЙ ЭЗЭД · Монгол хэлний цахим сургалтын платформ</title>
+    <meta
+      name="description"
+      content="Монгол хэлний цахим сургалтын платформ. Уншаад ойлгох чадвараа ахиулцгаая."
+    />
+    <meta property="og:site_name" content="ЭХ ХЭЛНИЙ ЭЗЭД" />
+    <meta property="og:title" content="ЭХ ХЭЛНИЙ ЭЗЭД" />
+    <meta
+      property="og:description"
+      content="Монгол хэлний цахим сургалтын платформ. Уншаад ойлгох чадвараа ахиулцгаая."
+    />
+    <script type="application/json" id="site-head">
+      {
+        "siteName": "ЭХ ХЭЛНИЙ ЭЗЭД",
+        "siteDescription": "Монгол хэлний цахим сургалтын платформ. Уншаад ойлгох чадвараа ахиулцгаая."
+      }
+    </script>
+    <style>
+      :root {
+        --navy: #123b68;
+        --blue: #2467a5;
+        --gold: #e7b64b;
+        --pale: #eef5fc;
+        --ink: #203044;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, "Noto Sans", sans-serif;
+        color: var(--ink);
+        background: #f5f8fc;
+      }
+      header {
+        background: linear-gradient(120deg, #123b68, #2874b6);
+        color: white;
+        padding: 26px 5%;
+        border-bottom: 5px solid var(--gold);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 5vw, 45px);
+        letter-spacing: 0.4px;
+      }
+      header p {
+        margin: 9px 0 0;
+        font-size: 17px;
+      }
+      header .slogan {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-top: 13px;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 14px 5%;
+        background: white;
+        box-shadow: 0 2px 9px #dce5ef;
+      }
+      nav button,
+      .btn {
+        border: 0;
+        border-radius: 10px;
+        padding: 11px 16px;
+        background: var(--blue);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      nav button {
+        background: #e8f1fb;
+        color: var(--navy);
+      }
+      nav button.active,
+      nav button:hover {
+        background: var(--navy);
+        color: white;
+      }
+      main {
+        max-width: 1100px;
+        margin: 25px auto;
+        padding: 0 18px;
+      }
+      .view {
+        display: none;
+      }
+      .view.active {
+        display: block;
+      }
+      .hero,
+      .card {
+        background: white;
+        border: 1px solid #e1eaf3;
+        border-radius: 17px;
+        padding: 22px;
+        margin-bottom: 18px;
+        box-shadow: 0 6px 20px #183b6410;
+      }
+      .hero {
+        background: linear-gradient(135deg, #fff, #eaf4ff);
+        border-left: 6px solid var(--gold);
+      }
+      h2 {
+        color: var(--navy);
+        margin-top: 0;
+      }
+      h3 {
+        color: #285b91;
+      }
+      small,
+      .muted {
+        color: #64748b;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin: 12px 0 6px;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #cbd8e7;
+        border-radius: 9px;
+        font: inherit;
+        background: white;
+      }
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .stat {
+        background: #edf5ff;
+        border-radius: 12px;
+        padding: 15px;
+        text-align: center;
+      }
+      .stat strong {
+        display: block;
+        font-size: 27px;
+        color: #1c5c9c;
+        margin-top: 7px;
+      }
+      .question {
+        padding: 13px;
+        background: #f7faff;
+        border-radius: 10px;
+        margin: 10px 0;
+      }
+      .question label {
+        font-weight: normal;
+      }
+      .badge {
+        display: inline-block;
+        background: #fff3cf;
+        color: #7b5711;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 13px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #e4ebf3;
+      }
+      th {
+        background: #eff5fb;
+        color: var(--navy);
+      }
+      .bar {
+        height: 14px;
+        background: #e5edf7;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .bar span {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, #2874b6, #42b6a2);
+      }
+      .notice {
+        padding: 12px;
+        background: #fff7df;
+        border-radius: 10px;
+        color: #765616;
+        margin: 12px 0;
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        color: #6b7b8d;
+      }
+      @media (max-width: 600px) {
+        nav {
+          padding: 12px;
+        }
+        nav button {
+          flex: 1;
+        }
+        main {
+          padding: 0 12px;
+        }
+        .card,
+        .hero {
+          padding: 16px;
+        }
+      }
+
+      button {
+        font: inherit;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: wait;
+      }
+      .actions,
+      .heading,
+      .inline {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .heading {
+        justify-content: space-between;
+      }
+      .inline > div {
+        flex: 1;
+      }
+      .btn {
+        margin-top: 12px;
+      }
+      .secondary {
+        background: #e8f1fb;
+        color: var(--navy);
+      }
+      .link {
+        border: 0;
+        background: transparent;
+        color: var(--navy);
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 10px;
+      }
+      .question input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+      }
+      .question textarea {
+        min-height: 70px;
+      }
+      .question .grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+      .row {
+        border-bottom: 1px solid #e1eaf3;
+        padding: 14px 0;
+      }
+      .code {
+        font-family: monospace;
+        font-size: 18px;
+        word-break: break-all;
+      }
+      .empty {
+        padding: 20px;
+        color: #64748b;
+        background: #f7faff;
+        border-radius: 10px;
+      }
+      .scroll {
+        overflow: auto;
+      }
+      .passage {
+        white-space: pre-wrap;
+        line-height: 1.9;
+        background: #f7faff;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 4px solid var(--gold);
+      }
+      .answer {
+        display: block;
+        text-align: left;
+        border: 1px solid #cbd8e7;
+        border-radius: 10px;
+        margin: 8px 0;
+        padding: 16px;
+        background: #eef5fc;
+        cursor: pointer;
+      }
+      .answer:has(input:checked) {
+        background: #123b68;
+        color: white;
+        border-color: #123b68;
+      }
+      .game .question:nth-child(2n) {
+        border-left: 4px solid var(--gold);
+      }
+      .timer {
+        position: sticky;
+        top: 0;
+        background: #123b68;
+        color: white;
+        padding: 12px;
+        border-radius: 9px;
+        z-index: 2;
+        font-weight: bold;
+      }
+      .feedback {
+        border-left: 4px solid #d69a32;
+        padding: 12px;
+        margin: 10px 0;
+        background: #fff7df;
+      }
+      .feedback.ok {
+        border-color: #25806b;
+        background: #edf8f4;
+      }
+      .chart {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+        min-height: 150px;
+        overflow: auto;
+        padding-top: 20px;
+      }
+      .chart-col {
+        min-width: 62px;
+        flex: 1;
+        text-align: center;
+        font-size: 12px;
+      }
+      .chart-value {
+        background: #2467a5;
+        border-radius: 6px 6px 0 0;
+        min-height: 3px;
+        margin-top: 5px;
+      }
+      .notice[hidden],
+      [hidden] {
+        display: none !important;
+      }
+      #status {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        margin: 0;
+        padding: 14px 5%;
+        background: #fff7df;
+        border-bottom: 1px solid #e7b64b;
+      }
+      #status.error {
+        background: #ffeded;
+        color: #8c2932;
+      }
+      input:focus,
+      textarea:focus,
+      select:focus,
+      button:focus-visible {
+        outline: 3px solid #e7b64b;
+        outline-offset: 2px;
+      }
+      footer {
+        border-top: 1px solid #e1eaf3;
+      }
+      @media print {
+        header,
+        nav,
+        footer,
+        #status,
+        button,
+        .actions,
+        #teacher,
+        #student,
+        #games,
+        #home {
+          display: none !important;
+        }
+        #report {
+          display: block !important;
+        }
+        .card {
+          box-shadow: none;
+          border: 0;
+        }
+        body {
+          background: white;
+        }
+        .scroll {
+          overflow: visible;
+        }
+        table {
+          font-size: 11px;
+        }
+        h2 {
+          color: #123b68;
+        }
+      }
+      @media (max-width: 600px) {
+        .heading {
+          align-items: start;
+        }
+        .inline {
+          display: block;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ЭХ ХЭЛНИЙ ЭЗЭД</h1>
+      <p>Монгол хэлний цахим сургалтын платформ</p>
+      <p class="slogan">
+        Уншаад ойлгох чадвараа ахиулцгаая · Унш · Ойлго · Задлан шинжил ·
+        Эргэцүүл · Дүгнэ
+      </p>
+    </header>
+    <nav>
+      <button class="active" data-view="home">Нүүр</button
+      ><button data-view="teacher">Багш</button
+      ><button data-view="student">Сурагч</button
+      ><button data-view="games">Тоглоом</button
+      ><button data-view="report">Ахиц, тайлан</button>
+    </nav>
+    <div id="status" role="status" aria-live="polite" hidden></div>
+    <main>
+      <section id="home" class="view active">
+        <div class="hero">
+          <span class="badge">УНШЛАГА · ОЙЛГОЛТ · СЭТГЭЛГЭЭ</span>
+          <h2 style="margin-top: 15px">
+            Эх хэлээрээ сэтгэж, эрдмээрээ гэрэлтэе!
+          </h2>
+          <p>
+            Унших эхээ судалж, даалгавраа гүйцэтгэн, мэдлэг чадвараа шат ахиул.
+          </p>
+          <button class="btn" onclick="show('student')">Сурагчийн хэсэг</button>
+          <button class="btn" onclick="show('teacher')">Багшийн хэсэг</button>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>📚 Түвшинчилсэн даалгавар</h3>
+            <p>Анхан, дунд, ахисан түвшний эх ба дасгал.</p>
+          </div>
+          <div class="card">
+            <h3>🎮 Суралцах тоглоом</h3>
+            <p>Асуулт, сорил, оноотой тоглоомоор давт.</p>
+          </div>
+          <div class="card">
+            <h3>📈 Ахицын хяналт</h3>
+            <p>Оноо, гүйцэтгэл, ахицын графикаа хараарай.</p>
+          </div>
+        </div>
+        <div class="notice">
+          Багш анги үүсгэж, сурагч бүрд хувийн код олгоно. Нэвтэрсний дараа
+          даалгавар, үр дүнгээ бүх төхөөрөмжөөс үзэх боломжтой.
+        </div>
+      </section>
+
+      <section id="teacher" class="view">
+        <div id="teacherAuth" class="card">
+          <h2>Багшийн нэвтрэлт</h2>
+          <p>Анги, даалгавар, үнэлгээгээ нэг дор удирдаарай.</p>
+          <form id="authForm">
+            <div class="grid">
+              <div>
+                <label for="teacherName">Багшийн нэр (бүртгүүлэхэд)</label
+                ><input id="teacherName" autocomplete="name" /><label
+                  for="email"
+                  >И-мэйл</label
+                ><input id="email" type="email" required autocomplete="email" />
+              </div>
+              <div>
+                <label for="password">Нууц үг</label
+                ><input
+                  id="password"
+                  type="password"
+                  minlength="8"
+                  required
+                  autocomplete="current-password"
+                />
+                <p class="muted">
+                  Бүртгүүлсний дараа и-мэйлээр ирсэн холбоосоор хаягаа
+                  баталгаажуулна уу.
+                </p>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn" name="intent" value="login">Нэвтрэх</button
+              ><button class="btn secondary" name="intent" value="signup">
+                Бүртгүүлэх</button
+              ><button class="link" type="button" data-action="recover">
+                Нууц үг сэргээх
+              </button>
+            </div>
+          </form>
+          <form id="resetForm" hidden>
+            <label for="newPassword">Шинэ нууц үг</label
+            ><input
+              type="password"
+              id="newPassword"
+              minlength="8"
+              required
+              autocomplete="new-password"
+            /><button class="btn">Нууц үг хадгалах</button>
+          </form>
+        </div>
+        <div id="teacherWorkspace" hidden>
+          <div class="card">
+            <div class="heading">
+              <h2>Багшийн удирдлага</h2>
+              <button class="link" data-action="teacherLogout">Гарах</button>
+            </div>
+            <p id="teacherWelcome"></p>
+            <div id="teacherStats" class="grid"></div>
+          </div>
+          <div class="card">
+            <h3>Анги ба сурагчид</h3>
+            <form id="classForm" class="inline">
+              <div>
+                <label for="className">Шинэ ангийн нэр</label
+                ><input
+                  id="className"
+                  placeholder="9А"
+                  required
+                  maxlength="200"
+                />
+              </div>
+              <button class="btn">Анги үүсгэх</button>
+            </form>
+            <div id="classList"></div>
+            <form id="studentForm">
+              <h3>Сурагч бүртгэх</h3>
+              <div class="grid">
+                <div>
+                  <label for="studentClassSelect">Анги</label
+                  ><select id="studentClassSelect" required></select>
+                </div>
+                <div>
+                  <label for="newStudentName">Сурагчийн нэр</label
+                  ><input id="newStudentName" required maxlength="200" />
+                </div>
+              </div>
+              <button class="btn">Сурагч нэмэх, код үүсгэх</button>
+            </form>
+            <div id="issuedCode" class="notice" hidden></div>
+          </div>
+          <div class="card">
+            <h3>Унших эх, даалгавар бүтээх</h3>
+            <p class="muted">
+              Асуулт бүрийг чадвар, тайлбар, оноотой холбоно. Хадгалсан
+              даалгаврыг нээж засварлан шинэ хувилбар болгон хадгалж болно.
+            </p>
+            <div class="grid">
+              <div>
+                <label for="importFile">Word / PDF-ээс эх оруулах</label
+                ><input type="file" id="importFile" accept=".docx,.pdf" /><small
+                  >DOCX, тексттэй PDF · 8 MB хүртэл</small
+                >
+              </div>
+              <div>
+                <label for="aiTopic">AI-аар ноорог үүсгэх сэдэв</label
+                ><input id="aiTopic" placeholder="Жишээ: Усны үнэ цэн" /><button
+                  class="btn secondary"
+                  type="button"
+                  data-action="generate"
+                >
+                  AI ноорог үүсгэх
+                </button>
+              </div>
+            </div>
+            <p class="muted">
+              AI нооргийг багш нягталж зассаны дараа хадгална.
+            </p>
+            <form id="taskForm">
+              <label for="taskTitle">Даалгаврын нэр</label
+              ><input id="taskTitle" required maxlength="200" /><label
+                for="level"
+                >Түвшин</label
+              ><select id="level">
+                <option value="1">Анхан</option>
+                <option value="2">Дунд</option>
+                <option value="3">Ахисан</option></select
+              ><label for="passage">Унших эх</label
+              ><textarea id="passage" required maxlength="60000"></textarea>
+              <div id="questionEditor"></div>
+              <div class="actions">
+                <button
+                  type="button"
+                  class="btn secondary"
+                  data-action="addQuestion"
+                >
+                  ＋ Асуулт нэмэх</button
+                ><button class="btn">Даалгавар хадгалах</button
+                ><button type="button" class="link" data-action="clearDraft">
+                  Шинэ ноорог
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <h3>Хадгалсан даалгавар</h3>
+            <div id="taskList"></div>
+          </div>
+          <div class="card">
+            <h3>Даалгавар оноох</h3>
+            <form id="assignForm">
+              <div class="grid">
+                <div>
+                  <label for="assignTask">Даалгавар</label
+                  ><select id="assignTask" required></select
+                  ><label for="assignClass">Анги</label
+                  ><select id="assignClass" required></select
+                  ><label for="deadline">Хаах хугацаа</label
+                  ><input id="deadline" type="datetime-local" required />
+                </div>
+                <div>
+                  <label for="mode">Ажиллах хэлбэр</label
+                  ><select id="mode">
+                    <option value="quiz">Асуулт хариултын тоглоом</option>
+                    <option value="timed">Цагтай сорил</option>
+                    <option value="match">Үг, утга харгалзуулах</option></select
+                  ><label for="minutes">Ажиллах хугацаа (минут)</label
+                  ><input
+                    id="minutes"
+                    type="number"
+                    value="20"
+                    min="1"
+                    max="180"
+                    required
+                  />
+                  <p class="muted">
+                    Дунд, ахисан түвшин өмнөх түвшинд 70%-ийн амжилттай болсон
+                    үед нээгдэнэ. Нэг сурагч нэг оноолтыг нэг удаа гүйцэтгэнэ.
+                  </p>
+                </div>
+              </div>
+              <button class="btn">Ангид оноох</button>
+            </form>
+            <div id="assignmentList"></div>
+          </div>
+        </div>
+      </section>
+      <section id="student" class="view">
+        <div id="studentAuth" class="card">
+          <h2>Сурагчийн кабинет</h2>
+          <p>Багшаасаа авсан ангийн код, нэр, хувийн кодоор нэвтрээрэй.</p>
+          <form id="studentLogin">
+            <label for="studentClassCode">Ангийн код</label
+            ><input id="studentClassCode" required autocomplete="off" /><label
+              for="studentName"
+              >Бүртгэлтэй нэр</label
+            ><input id="studentName" required autocomplete="name" /><label
+              for="studentCode"
+              >Миний хувийн код</label
+            ><input
+              id="studentCode"
+              type="password"
+              required
+              autocomplete="off"
+            /><button class="btn">Ангидаа нэвтрэх</button>
+          </form>
+        </div>
+        <div id="studentWorkspace" hidden>
+          <div class="card">
+            <div class="heading">
+              <h2 id="welcome"></h2>
+              <button class="link" data-action="studentLogout">Гарах</button>
+            </div>
+            <div id="myProgress"></div>
+          </div>
+          <div class="card">
+            <h3>Миний даалгавар</h3>
+            <div id="studentTasks"></div>
+          </div>
+          <div class="card">
+            <h3>Миний үнэлгээ, ахиц</h3>
+            <div id="studentHistory"></div>
+          </div>
+        </div>
+      </section>
+      <section id="games" class="view">
+        <div class="card">
+          <h2>Уншлагын сорил, тоглоом</h2>
+          <p>
+            Сурагчийн хэсгээс оноосон даалгавраа сонгоорой. Эхээ уншиж,
+            хариултаа илгээгээд оноо, тайлбараа үзээрэй.
+          </p>
+          <div id="gameArea">
+            <button class="btn" data-action="goStudent">Миний даалгавар</button>
+          </div>
+        </div>
+      </section>
+      <section id="report" class="view">
+        <div class="card">
+          <div class="heading">
+            <h2>Гүйцэтгэл, ахицын тайлан</h2>
+            <button class="link" data-action="refreshReport">Шинэчлэх</button>
+          </div>
+          <p class="muted">
+            Багш өөрийн ангийн тайланг, сурагч зөвхөн өөрийн ахицыг үзнэ.
+          </p>
+          <div id="reportContent">Тайлангаа харахын тулд нэвтэрнэ үү.</div>
+        </div>
+      </section>
+    </main>
+    <footer>ЭХ ХЭЛНИЙ ЭЗЭД · Уншаад ойлгох чадвараа ахиулцгаая</footer>
+
+   <script type="module" src="/supabase.js"></script>
+<script type="module" src="/app.js"></script> 
+  </body>
+</html>

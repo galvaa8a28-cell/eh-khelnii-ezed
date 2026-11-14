@@ -1,0 +1,28 @@
+{
+  "name": "eh-khelnii-ezed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galvaa8a28-cell/eh-khelnii-ezed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/galvaa8a28-cell/eh-khelnii-ezed/issues"
+  },
+  "homepage": "https://github.com/galvaa8a28-cell/eh-khelnii-ezed#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
+}
