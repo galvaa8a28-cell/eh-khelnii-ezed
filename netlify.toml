@@ -8,7 +8,7 @@ redirects = []
   path = "/opt/build/repo/netlify/database/migrations"
 
 [build]
-publish = "/opt/build/repo/public"
+publish = "dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm run build"
